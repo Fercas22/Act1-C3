@@ -1,4 +1,3 @@
-from cmath import nan
 import numpy as np
 import math
 import matplotlib.pyplot as plt
@@ -25,15 +24,11 @@ def entranamiento_Neurona(n, wk, epocas):
 
     errores = []
     generaciones = []
-    # print(X)
-    # print(Y)
-    # print(n)
-    # print(wk)
-    # ek = np.array()
+   
     while(True):
         
         k += 1
-        print("Epoca: ", k)
+        # print("Epoca: ", k)
         #V
         # uk = np.dot(wk, X)
         uk = np.dot(X, wk)
@@ -68,28 +63,28 @@ def entrada(wk, ns, epocas):
     curvas = []
     for i in range(len(ns)):
         curvas.append(entranamiento_Neurona(ns[i], wk, epocas))
-    # figure2 = plt.figure(figsize=(15, 7))
+    
     grafica(ns, curvas)
 
 def grafica(ns, curvas):
 
-    ax = plt.subplot(1, 2, 1)
-    df = pd.DataFrame(curvas)
-    ax.set_title('Gráfica')
+    grafica = plt.subplot(1, 2, 1)
+    
+    grafica.set_title('Gráfica')
     # curvas = np.fillna(0)
     
     for x in range(len(curvas)):
         marker = 'o'
-        ax.plot(curvas[x][1], curvas[x][0],
+        grafica.plot(curvas[x][1], curvas[x][0],
                 marker=f'{marker}', label=f'η{x+1} = {ns[x]}')
 
-    ax.legend()
+    grafica.legend()
     
     
-    ax2 = plt.subplot(1, 2, 2)
-    ax2.axis('tight')
-    ax2.axis('off')
-
+    tabla = plt.subplot(1, 2, 2)
+    tabla.axis('tight')
+    tabla.axis('off')
+    tabla.set_title('Tabla')
     table = [['η (Taza de aprendizaje)', 'Ultimos pesos de W']]
     
     for y in range(len(ns)):
@@ -100,7 +95,6 @@ def grafica(ns, curvas):
             if np.isnan(curvas[y][2][f]):
                 print(curvas[y][2][f])
                 print('Esto es el los NaN')
-                df.fillna(0)
                 redo.append(0)
             else:
                 redo.append(round(curvas[y][2][f], 3))
@@ -108,7 +102,7 @@ def grafica(ns, curvas):
 
         table.append([ns[y], redo])
 
-    table = ax2.table(cellText=table, loc='center', cellLoc= 'center')
+    table = tabla.table(cellText=table, loc='center', cellLoc= 'center')
     table.auto_set_font_size(False)
     table.set_fontsize(10)
     table.scale(1, 3)
