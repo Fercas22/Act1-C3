@@ -9,6 +9,7 @@ Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 class Main(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
+        
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
@@ -22,13 +23,16 @@ class Main(QtWidgets.QMainWindow, Ui_MainWindow):
         self.btnSalir.clicked.connect(self.salir)
     
     def iniciar(self):
+
         tazaAprendizaje, epocas = self.getNK()
 
         if not tazaAprendizaje and not epocas:
             tazaAprendizaje = float(round(rand.uniform(1, 0), 3))
             epocas = rand.randint(1, 1000)
             neurona.entrenamientoNeurona(epocas, tazaAprendizaje)
+
         else:
+
             if (not tazaAprendizaje and epocas) or (not epocas and tazaAprendizaje):
                 QMessageBox.warning(None, 'Campo Vacio', 'No deje un campo vacio!')
             else:

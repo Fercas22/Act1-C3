@@ -3,8 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# celsius = np.array([-40, -10, 0, 8, 15, 22, 38], dtype=float)
-# fahrenheit = np.array([-40, 14, 32, 46, 59, 72, 100], dtype=float)
+
 def leerCSV():
     X = []
     Y = []
@@ -62,5 +61,3 @@ def entrenamientoNeurona(epocas, tazaAprendizaje):
     # print(oculta1.get_weights())
     # print(oculta2.get_weights())
     # print(salida.get_weights())
-
-# entrenamientoNeurona(2000, 0.1)
