@@ -46,7 +46,7 @@
      <string notr="true">font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>η (Taza de aprendizaje)</string>
+     <string>η (Tasa de aprendizaje)</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="n1">
@@ -191,7 +191,7 @@ font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
      <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Generar Todo Aleatoriamente</string>
+     <string>Generar Todo Aleatoriamente.</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="definirValores">
@@ -207,7 +207,7 @@ font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
      <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Agregar Valores</string>
+     <string>Agregar Valores.</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnIniciarProceso">
@@ -256,33 +256,20 @@ font: 28pt &quot;MS Shell Dlg 2&quot;;</string>
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="lblEpocas">
+   <widget class="QCheckBox" name="checkNeurona">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>210</y>
-      <width>81</width>
-      <height>31</height>
+      <x>310</x>
+      <y>180</y>
+      <width>221</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
+     <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Epocas</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="epocas">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
-      <y>250</y>
-      <width>161</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="placeholderText">
-     <string>Ingrese la cantidad de epocas</string>
+     <string>Solo una tasa de aprendizaje.</string>
     </property>
    </widget>
   </widget>
