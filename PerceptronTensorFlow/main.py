@@ -16,7 +16,7 @@ class Main(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setWindowTitle('.:: PERCEPTRÓN TENSORFLOW ::. 193258 - 193213')
         self.setFixedSize(516, 400)
 
-        self.tazaAprendizaje.setValidator(QtGui.QDoubleValidator())
+        self.tasaAprendizaje.setValidator(QtGui.QDoubleValidator())
         self.epocas.setValidator(QtGui.QIntValidator())
 
         self.btnEjecutar.clicked.connect(self.iniciar)
@@ -24,26 +24,26 @@ class Main(QtWidgets.QMainWindow, Ui_MainWindow):
     
     def iniciar(self):
 
-        tazaAprendizaje, epocas = self.getNK()
+        tasaAprendizaje, epocas = self.getNK()
 
-        if not tazaAprendizaje and not epocas:
-            tazaAprendizaje = float(round(rand.uniform(1, 0), 3))
+        if not tasaAprendizaje and not epocas:
+            tasaAprendizaje = float(round(rand.uniform(1, 0), 3))
             epocas = rand.randint(1, 1000)
-            neurona.entrenamientoNeurona(epocas, tazaAprendizaje)
+            neurona.entrenamientoNeurona(epocas, tasaAprendizaje)
 
         else:
 
-            if (not tazaAprendizaje and epocas) or (not epocas and tazaAprendizaje):
+            if (not tasaAprendizaje and epocas) or (not epocas and tasaAprendizaje):
                 QMessageBox.warning(None, 'Campo Vacio', 'No deje un campo vacio!')
             else:
-                tazaAprendizaje = float(self.tazaAprendizaje.text())
+                tasaAprendizaje = float(self.tasaAprendizaje.text())
                 epocas = int(self.epocas.text())
-                neurona.entrenamientoNeurona(epocas, tazaAprendizaje)
+                neurona.entrenamientoNeurona(epocas, tasaAprendizaje)
 
     def getNK(self):
-        tazaAprendizaje = self.tazaAprendizaje.text()
+        tasaAprendizaje = self.tasaAprendizaje.text()
         epocas = self.epocas.text()
-        return tazaAprendizaje, epocas
+        return tasaAprendizaje, epocas
 
     def salir(self):
         salir = QMessageBox.question(

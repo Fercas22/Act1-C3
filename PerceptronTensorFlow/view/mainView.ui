@@ -46,7 +46,7 @@
      <string>Ejecutar</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="tazaAprendizaje">
+   <widget class="QLineEdit" name="tasaAprendizaje">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -56,7 +56,7 @@
      </rect>
     </property>
     <property name="placeholderText">
-     <string>Ingrese la taza de aprendizaje</string>
+     <string>Ingrese la tasa de aprendizaje</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="epocas">
